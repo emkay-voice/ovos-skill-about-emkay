@@ -1,0 +1,18 @@
+{
+  "skill_id": "ovos-skill-about-emkay.emkay-voice",
+  "source": "https://github.com/emkay-voice/ovos-skill-about-emkay",
+  "name": "About Emkay",
+  "description": "Who Emkay is and where it comes from: Mycroft's Mark 1 and Mark 2, the OpenVoiceOS community, and Emkay itself, with the logos on the screen.",
+  "examples": [
+    "Who are you?",
+    "Tell me about yourself",
+    "Why are you called Emkay?",
+    "What is OpenVoiceOS?",
+    "What was Mycroft?"
+  ],
+  "tags": [
+    "personality",
+    "persona",
+    "emkay"
+  ]
+}

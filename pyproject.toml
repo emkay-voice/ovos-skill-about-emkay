@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-skill-about-emkay"
+version = "0.1.0a1"
+description = "OpenVoiceOS skill: who Emkay is and where it comes from (Mycroft's Mark 1 and Mark 2, OpenVoiceOS), with the logos on the screen"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [{name = "Andreas Lorensen"}]
+requires-python = ">=3.10"
+keywords = ["ovos", "openvoiceos", "skill", "personality", "persona", "mycroft", "emkay"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "ovos-utils>=0.0.38",
+    "ovos-workshop>=0.0.15,<10.0.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest", "ovos-bus-client"]
+
+[project.urls]
+Homepage = "https://github.com/emkay-voice/ovos-skill-about-emkay"
+Issues = "https://github.com/emkay-voice/ovos-skill-about-emkay/issues"
+Emkay = "https://github.com/emkay-voice/emkay"
+
+[project.entry-points."opm.skill"]
+"ovos-skill-about-emkay.emkay-voice" = "ovos_skill_about_emkay:AboutEmkaySkill"
+
+[tool.setuptools]
+packages = ["ovos_skill_about_emkay"]
+
+[tool.setuptools.package-dir]
+ovos_skill_about_emkay = ""
+
+[tool.setuptools.package-data]
+ovos_skill_about_emkay = ["locale/**/*", "gui/**/*", "settingsmeta.json"]
