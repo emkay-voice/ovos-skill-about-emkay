@@ -4,10 +4,24 @@
       {
         "name": "About the assistant",
         "fields": [
-          {"name": "assistant_name", "type": "text", "label": "Name", "value": "Emkay"},
-          {"name": "creator", "type": "text", "label": "Made by", "value": "Andreas Lorensen"},
-          {"name": "year_of_birth", "type": "number", "label": "Year of birth", "value": "2026"},
-          {"name": "location_of_birth", "type": "text", "label": "Place of birth", "value": "Denmark"}
+          {
+            "name": "assistant_name",
+            "type": "text",
+            "label": "Name",
+            "value": "Emkay"
+          },
+          {
+            "name": "creator",
+            "type": "text",
+            "label": "Made by",
+            "value": "Andreas Lorensen"
+          },
+          {
+            "name": "year_of_birth",
+            "type": "number",
+            "label": "Year of birth",
+            "value": "2026"
+          }
         ]
       }
     ]

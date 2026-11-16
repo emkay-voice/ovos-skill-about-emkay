@@ -1,5 +1,6 @@
 """The skill answers as Emkay, and tells the story in order, in English and Danish."""
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -49,20 +50,27 @@ def test_name_meaning(skill):
 def test_story_in_order(skill):
     skill.handle_story(Message("x"))
     story = said(skill)
-    assert len(story) == 4
+    assert len(story) == 5
     assert "Mycroft" in story[0] and "2015" in story[0]
-    assert "Mark 2" in story[1]
-    assert "OpenVoiceOS" in story[2]
-    assert "Emkay" in story[3] and "M K" in story[3]
+    assert "Mark 1" in story[1]
+    assert "Mark 2" in story[2]
+    assert "OpenVoiceOS" in story[3]
+    assert "Emkay" in story[4] and "M K" in story[4]
 
 
-@pytest.mark.parametrize("lang", ["en-US", "da-DK"])
+LANGS = ["en-US", "da-DK", "de-DE", "nl-NL", "fr-FR", "es-ES", "it-IT",
+         "pt-BR", "pt-PT", "ca-ES", "gl-ES", "eu-ES"]
+
+
+@pytest.mark.parametrize("lang", LANGS)
 def test_every_intent_has_its_answers(lang):
     """Each intent the code registers exists, and each dialog it speaks too."""
     loc = ROOT / "locale" / lang
     code = (ROOT / "__init__.py").read_text()
     for intent in loc.glob("*.intent"):
         assert f'"{intent.name}"' in code, intent.name
+    for intent in ("story", "what_is_mycroft", "what_is_ovos", "name_meaning"):
+        assert (loc / f"{intent}.intent").read_text(encoding="utf-8").strip(), intent
     for dialog in ("who_am_i", "what_am_i", "who_made_me", "when_was_i_born", "where_was_i_born",
                    "what_is_mycroft", "what_is_ovos", "name_meaning",
                    *(d for d, _, _ in pkg.STORY)):
@@ -72,3 +80,11 @@ def test_every_intent_has_its_answers(lang):
 def test_skill_json_names_this_skill():
     for f in (ROOT / "locale").glob("*/skill.json"):
         assert json.loads(f.read_text(encoding="utf-8"))["skill_id"] == SKILL_ID, f
+
+
+@pytest.mark.parametrize("lang", LANGS)
+def test_dialogs_only_use_known_fields(lang):
+    """{name}, {creator} and {year} are all a dialog may ask for."""
+    for f in (ROOT / "locale" / lang).glob("*.dialog"):
+        for field in re.findall(r"{(\w+)}", f.read_text(encoding="utf-8")):
+            assert field in ("name", "creator", "year"), (f.name, field)

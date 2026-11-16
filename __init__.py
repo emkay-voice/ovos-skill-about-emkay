@@ -14,7 +14,8 @@ Settings (as in ovos-skill-personal):
     assistant_name   "Emkay"
     creator          "Andreas Lorensen"
     year_of_birth    2026
-    location_of_birth  "Denmark" (spoken as is, in every language)
+(Where it was born, Denmark, is in each language's dialog, so it reads
+right in every language.)
 """
 from os.path import dirname, isfile, join
 
@@ -27,6 +28,7 @@ from ovos_workshop.skills import OVOSSkill
 #: the story, in order: (dialog, picture, title on the screen)
 STORY = (
     ("story_mycroft", "mycroft.png", "Mycroft"),
+    ("story_mark1", "mark1.png", "Mark 1"),
     ("story_mark2", "mark2.png", "Mark 2"),
     ("story_ovos", "ovos.png", "OpenVoiceOS"),
     ("story_emkay", "emkay.png", "Emkay"),
@@ -55,15 +57,17 @@ class AboutEmkaySkill(OVOSSkill):
             "name": self.settings.get("assistant_name") or "Emkay",
             "creator": self.settings.get("creator") or "Andreas Lorensen",
             "year": self.settings.get("year_of_birth") or 2026,
-            "location": self.settings.get("location_of_birth") or "Denmark",
+            # only ovos-skill-personal's dialogs in languages Emkay does
+            # not ship still ask for it; Emkay's say Denmark in their language
+            "location": "Denmark",
         }
 
     # -- the screen ----------------------------------------------------------
 
     def picture(self, image: str, title: str):
         """Show `image` from gui/images with `title`; just the title when the
-        picture is not there (the Mycroft and OpenVoiceOS logos are not
-        shipped, see the README)."""
+        picture is not there (there is no free picture of the Mark 2 yet,
+        see CREDITS.md)."""
         path = join(dirname(__file__), "gui", "images", image)
         if isfile(path):
             self.gui.show_image(path, title=title, fill="PreserveAspectFit",

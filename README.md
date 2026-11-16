@@ -21,16 +21,17 @@ the browser, and takes the place of ovos-skill-personal there.
 "What is OpenVoiceOS?"         "Hvad er OpenVoiceOS?"
 ```
 
-"Tell me about yourself" tells the whole story, in four parts:
+"Tell me about yourself" tells the whole story, in five parts:
 
 1. **Mycroft**: in 2015 Mycroft AI, a small company in Kansas, set out to
-   build an open source voice assistant, and funded its first device, the
-   Mark 1, on Kickstarter.
-2. **Mark 2**: in 2018 Mycroft launched the Mark 2, with a touch screen and
+   build an open source voice assistant.
+2. **Mark 1**: its first device, funded on Kickstarter, reached its
+   backers in 2016.
+3. **Mark 2**: in 2018 Mycroft launched the Mark 2, with a touch screen and
    a face. The two were known as MK1 and MK2.
-3. **OpenVoiceOS**: when Mycroft AI closed in 2023, the OpenVoiceOS
+4. **OpenVoiceOS**: when Mycroft AI closed in 2023, the OpenVoiceOS
    community carried the work on.
-4. **Emkay**: OpenVoiceOS in a web browser. M K, after the Mark 1 and the
+5. **Emkay**: OpenVoiceOS in a web browser. M K, after the Mark 1 and the
    Mark 2.
 
 ## Why a skill of its own
@@ -42,20 +43,21 @@ own, as Neon has its own personal skill. The intents and their translations
 are ovos-skill-personal's (Apache-2.0, thanks to the OpenVoiceOS community
 and its translators), so the same questions work in every language
 ovos-skill-personal knows. The story and Emkay's own questions are in
-English and Danish for now; the other languages answer "tell me about
-yourself" with who it is.
+every language Emkay ships (English, Danish, German, Dutch, French,
+Spanish, Italian, Portuguese, Catalan, Galician and Basque); a language
+without them answers "tell me about yourself" with who it is.
 
 Install one or the other: with both, two skills compete for the same
 questions. Emkay blacklists ovos-skill-personal for that reason.
 
 ## The pictures
 
-The skill shows `gui/images/<name>.png` while it talks about each part:
-`mycroft.png`, `mark2.png`, `ovos.png` and `emkay.png`. Only Emkay's own
-logo is in the package. Mycroft's and OpenVoiceOS' logos and pictures of
-the Mark 1 and Mark 2 belong to others, so they are not shipped here; a
-part without its picture shows its name instead. To show them, put the
-files in `gui/images/` of the installed skill.
+While it talks, the screen shows the logo of the organisation it talks
+about, the way a news programme does, and a photo of the device:
+Mycroft's logo, the Mark 1, the OpenVoiceOS logo and Emkay's own. Where
+each comes from and its license: [CREDITS.md](CREDITS.md). There is no
+free picture of the finished Mark 2 yet; that part shows its name until
+`gui/images/mark2.png` is there.
 
 ## Settings
 
@@ -64,7 +66,6 @@ files in `gui/images/` of the installed skill.
 | `assistant_name` | Emkay |
 | `creator` | Andreas Lorensen |
 | `year_of_birth` | 2026 |
-| `location_of_birth` | Denmark |
 
 ## License
 
