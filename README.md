@@ -59,6 +59,20 @@ each comes from and its license: [CREDITS.md](CREDITS.md). There is no
 free picture of the finished Mark 2 yet; that part shows its name until
 `gui/images/mark2.png` is there.
 
+## In the control panel
+
+Installed where [ovos-control-panel](https://github.com/OpenVoiceOS/ovos-control-panel)
+runs, the skill adds an **About Emkay** page to its menu, right after the
+panel's own About. It shows the same story, in the device's language, with
+the same pictures, and the name, maker and year from the settings below.
+
+The page is registered through the panel's `opm.control_panel.page` entry
+point (see the panel's
+[docs/pages.md](https://github.com/OpenVoiceOS/ovos-control-panel/blob/dev/docs/pages.md)),
+and lives in `panel/`. Only the panel loads it, so the skill itself needs no
+web packages. The panel reads its pages when it starts, so restart it after
+installing the skill.
+
 ## Settings
 
 | setting | default |
