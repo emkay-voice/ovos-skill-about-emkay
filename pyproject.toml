@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ovos-skill-about-emkay"
-version = "0.1.0a2"
+version = "0.1.0a3"
 description = "OpenVoiceOS skill: who Emkay is and where it comes from (Mycroft's Mark 1 and Mark 2, OpenVoiceOS), with the logos on the screen"
 readme = "README.md"
 license = {text = "Apache-2.0"}
@@ -32,11 +32,17 @@ Emkay = "https://github.com/emkay-voice/emkay"
 [project.entry-points."opm.skill"]
 "ovos-skill-about-emkay.emkay-voice" = "ovos_skill_about_emkay:AboutEmkaySkill"
 
+# A page in ovos-control-panel (see panel/__init__.py). Only the panel loads it.
+[project.entry-points."opm.control_panel.page"]
+about-emkay = "ovos_skill_about_emkay.panel:PAGE"
+
 [tool.setuptools]
-packages = ["ovos_skill_about_emkay"]
+packages = ["ovos_skill_about_emkay", "ovos_skill_about_emkay.panel"]
 
 [tool.setuptools.package-dir]
 ovos_skill_about_emkay = ""
+"ovos_skill_about_emkay.panel" = "panel"
 
 [tool.setuptools.package-data]
 ovos_skill_about_emkay = ["locale/**/*", "gui/**/*", "settingsmeta.json"]
+"ovos_skill_about_emkay.panel" = ["page.html", "icon.svg", "i18n/*.json"]
