@@ -66,12 +66,13 @@ runs, the skill adds an **About Emkay** page to its menu, right after the
 panel's own About. It shows the same story, in the device's language, with
 the same pictures, and the name, maker and year from the settings below.
 
-The page is registered through the panel's `opm.control_panel.page` entry
-point (see the panel's
-[docs/pages.md](https://github.com/OpenVoiceOS/ovos-control-panel/blob/dev/docs/pages.md)),
-and lives in `panel/`. Only the panel loads it, so the skill itself needs no
-web packages. The panel reads its pages when it starts, so restart it after
-installing the skill.
+The page is described in `controlpanel.json` (see the panel's
+[docs/pages.md](https://github.com/OpenVoiceOS/ovos-control-panel/blob/dev/docs/pages.md)):
+the panel draws it, and asks the skill for the story with the message
+`ovos.about-emkay.story`. Its texts are in `locale/<lang>/controlpanel.json`.
+The skill itself needs no web packages. The panel reads its pages when it
+starts, so restart it after installing the skill. Pictures in a page need
+ovos-control-panel 0.0.1a81 or newer.
 
 ## Settings
 

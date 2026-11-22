@@ -1,8 +1,6 @@
 {
  "aboutEmkay.title": "Emkayri buruz",
  "aboutEmkay.intro": "Nor den Emkay eta nondik datorren: Emkayk bere buruari buruz galdetzean kontatzen duen istorioa.",
- "aboutEmkay.loading": "Istorioa kargatzen…",
  "aboutEmkay.ask": "Esan Emkayri «Hitz egin zuri buruz» entzuteko, irudiak pantailan dituela.",
- "aboutEmkay.more": "Gehiago Emkayri buruz",
- "aboutEmkay.error": "Ezin izan da istorioa irakurri."
+ "aboutEmkay.more": "Gehiago Emkayri buruz: github.com/emkay-voice/emkay"
 }
