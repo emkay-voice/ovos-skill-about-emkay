@@ -1,6 +1,10 @@
 {
   "skill_id": "ovos-skill-about-emkay.emkay-voice",
   "source": "https://github.com/emkay-voice/ovos-skill-about-emkay",
+  "package_name": "ovos-skill-about-emkay",
+  "pip_spec": "ovos-skill-about-emkay",
+  "license": "Apache-2.0",
+  "author": "emkay-voice",
   "name": "Assistant's Background",
   "description": "Aprenda a história e a personalidade do assistente. Pergunte sobre o \"nascimento\" e a ascendência do assistente de voz e conheça um pouco da comunidade que está fomentando essa inteligência artificial de código aberto.",
   "examples": [

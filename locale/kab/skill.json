@@ -1,6 +1,10 @@
 {
   "skill_id": "ovos-skill-about-emkay.emkay-voice",
   "source": "https://github.com/emkay-voice/ovos-skill-about-emkay",
+  "package_name": "ovos-skill-about-emkay",
+  "pip_spec": "ovos-skill-about-emkay",
+  "license": "Apache-2.0",
+  "author": "emkay-voice",
   "name": "Laṣel n umallal",
   "description": "Issin amezruy d ṭṭbiɛa n umallal. Steqsi ɣef « tlalit » d laṣel n umallal-aa iheddṛen, ternuḍ ad tessineḍ tarbaɛt i t-id-yesnulfan s wudem yeldin i yal yiwen.",
   "examples": [

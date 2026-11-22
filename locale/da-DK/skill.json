@@ -1,6 +1,10 @@
 {
   "skill_id": "ovos-skill-about-emkay.emkay-voice",
   "source": "https://github.com/emkay-voice/ovos-skill-about-emkay",
+  "package_name": "ovos-skill-about-emkay",
+  "pip_spec": "ovos-skill-about-emkay",
+  "license": "Apache-2.0",
+  "author": "emkay-voice",
   "name": "Om Emkay",
   "description": "Hvem Emkay er, og hvor den kommer fra: Mycrofts Mark 1 og Mark 2, OpenVoiceOS-fællesskabet og Emkay selv, med logoerne på skærmen.",
   "examples": [

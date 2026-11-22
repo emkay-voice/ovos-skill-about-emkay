@@ -1,6 +1,10 @@
 {
   "skill_id": "ovos-skill-about-emkay.emkay-voice",
   "source": "https://github.com/emkay-voice/ovos-skill-about-emkay",
+  "package_name": "ovos-skill-about-emkay",
+  "pip_spec": "ovos-skill-about-emkay",
+  "license": "Apache-2.0",
+  "author": "emkay-voice",
   "name": "Rerefons de l'assistent",
   "description": "Coneixeu la història i la personalitat de l'assistent. Pregunteu sobre el \"naixement\" i la filiació de l'assistent de veu i feu un tast de la comunitat que fomenta aquesta intel·ligència artificial de codi obert.",
   "examples": [
