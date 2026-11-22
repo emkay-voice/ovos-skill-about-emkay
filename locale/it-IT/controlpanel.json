@@ -1,8 +1,6 @@
 {
  "aboutEmkay.title": "Informazioni su Emkay",
  "aboutEmkay.intro": "Chi è Emkay e da dove viene: la storia che Emkay racconta quando gli chiedi di sé.",
- "aboutEmkay.loading": "Caricamento della storia…",
  "aboutEmkay.ask": "Di' a Emkay \"Parlami di te\" per ascoltarla, con le immagini sullo schermo.",
- "aboutEmkay.more": "Altro su Emkay",
- "aboutEmkay.error": "Non è stato possibile leggere la storia."
+ "aboutEmkay.more": "Altro su Emkay: github.com/emkay-voice/emkay"
 }

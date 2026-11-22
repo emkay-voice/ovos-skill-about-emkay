@@ -1,8 +1,6 @@
 {
  "aboutEmkay.title": "Quant a Emkay",
  "aboutEmkay.intro": "Qui és Emkay i d'on ve: la història que explica Emkay quan li preguntes per ell mateix.",
- "aboutEmkay.loading": "S'està carregant la història…",
  "aboutEmkay.ask": "Digues a Emkay «Parla'm de tu» per escoltar-la, amb les imatges a la pantalla.",
- "aboutEmkay.more": "Més sobre Emkay",
- "aboutEmkay.error": "No s'ha pogut llegir la història."
+ "aboutEmkay.more": "Més sobre Emkay: github.com/emkay-voice/emkay"
 }

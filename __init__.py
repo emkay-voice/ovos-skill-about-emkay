@@ -18,6 +18,7 @@ Settings (as in ovos-skill-personal):
 right in every language.)
 """
 from os.path import dirname, isfile, join
+from pathlib import Path
 
 from ovos_bus_client.message import Message
 from ovos_utils import classproperty
@@ -35,7 +36,60 @@ STORY = (
 )
 
 
+#: the skill's own folder: its dialogs and pictures
+HERE = Path(__file__).resolve().parent
+
+
+def story_folder(lang: str) -> Path:
+    """The locale folder the story is read from for ``lang``: the language
+    itself, then the same language in another country, then English."""
+    root = HERE / "locale"
+    lang = (lang or "en-us").lower()
+    folders = {p.name.lower(): p for p in root.iterdir() if p.is_dir()}
+    if lang in folders:
+        return folders[lang]
+    base = lang.split("-")[0]
+    for name, path in sorted(folders.items()):
+        if name.split("-")[0] == base and (path / "story_mycroft.dialog").is_file():
+            return path
+    return folders["en-us"]
+
+
+def first_line(path: Path) -> str:
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            return line
+    return ""
+
+
+def story(lang: str, facts: dict) -> list[dict]:
+    """The five parts of the story, each with the picture it shows (or
+    none), for the control panel's page."""
+    folder = story_folder(lang)
+    parts = []
+    for dialog, image, title in STORY:
+        path = folder / f"{dialog}.dialog"
+        if not path.is_file():
+            path = story_folder("en-us") / f"{dialog}.dialog"
+        text = first_line(path)
+        for key, value in facts.items():
+            text = text.replace("{" + key + "}", str(value))
+        part = {"id": dialog, "title": title, "text": text}
+        if (HERE / "gui" / "images" / image).is_file():
+            part["image"] = image
+        parts.append(part)
+    return parts
+
+
 class AboutEmkaySkill(OVOSSkill):
+
+    def initialize(self):
+        # the control panel's page (controlpanel.json) asks for the story
+        self.add_event("ovos.about-emkay.story", self.handle_page_story, speak_errors=False)
+
+    def handle_page_story(self, message: Message):
+        self.bus.emit(message.response({"parts": story(self.lang, self.facts)}))
 
     @classproperty
     def runtime_requirements(self):

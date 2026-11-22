@@ -1,8 +1,6 @@
 {
  "aboutEmkay.title": "Om Emkay",
  "aboutEmkay.intro": "Hvem Emkay er, og hvor den kommer fra: historien, Emkay fortæller, når du spørger den om sig selv.",
- "aboutEmkay.loading": "Henter historien …",
  "aboutEmkay.ask": "Sig \"Fortæl mig om dig selv\" til Emkay for at høre den, med billederne på skærmen.",
- "aboutEmkay.more": "Mere om Emkay",
- "aboutEmkay.error": "Historien kunne ikke læses."
+ "aboutEmkay.more": "Mere om Emkay: github.com/emkay-voice/emkay"
 }

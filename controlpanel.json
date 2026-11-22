@@ -1,0 +1,34 @@
+{
+ "controlpanel": 1,
+ "id": "about-emkay",
+ "path": "/about-emkay",
+ "title": "aboutEmkay.title",
+ "group": "everyday",
+ "order": 95,
+ "icon": "controlpanel.svg",
+ "bus": "ovos.about-emkay.",
+ "pictures": "gui/images",
+ "blocks": [
+  {
+   "type": "text",
+   "text": "aboutEmkay.intro"
+  },
+  {
+   "type": "list",
+   "query": "ovos.about-emkay.story",
+   "items": "parts",
+   "key": "id",
+   "title": "{title}",
+   "text": "{text}",
+   "picture": "image"
+  },
+  {
+   "type": "text",
+   "text": "aboutEmkay.ask"
+  },
+  {
+   "type": "text",
+   "text": "aboutEmkay.more"
+  }
+ ]
+}
